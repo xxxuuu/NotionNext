@@ -203,7 +203,7 @@ const LayoutArchive = props => {
           </Tag>
         ))}
       </div>
-      <div className='w-full'>
+      {archivePosts && (<div className='w-full'>
         {Object.keys(archivePosts).map(archiveTitle => (
           <BlogListArchive
             key={archiveTitle}
@@ -211,7 +211,7 @@ const LayoutArchive = props => {
             archivePosts={archivePosts}
           />
         ))}
-      </div>
+      </div>)}
     </div>
   )
 }

@@ -2049,6 +2049,14 @@ code.language-mermaid {
   @apply hidden;
 }
 
+.notion-code-copy-button {
+  font-size: 0.8em !important;
+}
+
+.notion-code-copy-tooltip {
+  font-size: 0.8em !important;
+}
+
 .mermaid > svg {
   margin: auto;
 }

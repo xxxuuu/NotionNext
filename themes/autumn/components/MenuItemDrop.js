@@ -12,12 +12,12 @@ export const MenuItemDrop = ({ link }) => {
 
   return (
     <li
-      className='cursor-pointer text-gray-200/[.9] text-sm font-normal drop-shadow-md pb-3 mr-4 h-8
+      className='cursor-pointer text-gray-200/[.9] text-sm font-normal drop-shadow-md mr-4 h-8
         transition-all duration-100 hover:text-white hover:border-b-white hover:border-b-2'
       onMouseOver={() => changeShow(true)}
       onMouseOut={() => changeShow(false)}>
       {!hasSubMenu && (
-        <Link href={link?.href} target={link?.target}>
+        <Link href={link?.href} target={link?.target} className='pb-3'>
           {link?.icon && <i className={link?.icon} />} {link?.name}
           {hasSubMenu && <i className='ml-2 fa fa-angle-down'></i>}
         </Link>

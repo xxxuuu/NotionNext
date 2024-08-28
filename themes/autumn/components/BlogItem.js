@@ -12,7 +12,7 @@ const BlogItem = ({ post }) => {
   const showPageCover = post?.pageCoverThumbnail !== ''
 
   return (
-    <article className='flex flex-col-reverse sm:flex-row replace pb-4 sm:pb-8 mb-10 sm:mb-8 w-full border-dashed border-gray-100 border-b last:border-0'>
+    <article className='flex flex-col-reverse sm:flex-row replace pb-6 sm:pb-8 mb-8 w-full border-dashed border-gray-100 border-b last:border-0'>
       <div className='flex-1 relative tracking-wide'>
         <Title post={post} />
 

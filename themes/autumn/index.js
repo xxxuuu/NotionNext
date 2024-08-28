@@ -7,7 +7,7 @@ import { useGlobal } from '@/lib/global'
 import { isBrowser } from '@/lib/utils'
 import { Transition } from '@headlessui/react'
 import { useRouter } from 'next/router'
-import { useEffect, forwardRef } from 'react'
+import { useEffect, forwardRef, useState, useRef } from 'react'
 import BlogListArchive from './components/BlogListArchive'
 import { BlogListPage } from './components/BlogListPage'
 import { Footer } from './components/Footer'
@@ -36,6 +36,32 @@ WFullDiv.displayName = 'WFullDiv'
 const LayoutBase = props => {
   const { children } = props
   const { onLoading } = useGlobal()
+
+  // 用户触发异步操作后需要等 400ms 才会显示 Skeleton
+  const delay = 400
+  // 如果展示了 Skeleton，至少要展示 700ms
+  const minDuration = 700
+
+  const [skeletonVisible, setSkeletonVisible] = useState(false)
+  const startTime = useRef(0)
+
+  useEffect(() => {
+    const remaining = minDuration - (Date.now() - startTime.current)
+    const timeout = onLoading ? delay : remaining >= 0 ? remaining : 0
+
+    const timer = setTimeout(() => {
+      setSkeletonVisible(onLoading)
+      if (onLoading) {
+        startTime.current = Date.now()
+      } else {
+        startTime.current = 0
+      }
+    }, timeout)
+
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [onLoading])
 
   return (
     <div
@@ -69,7 +95,7 @@ const LayoutBase = props => {
             {props.slotTop}
             {children}
           </Transition>
-          {onLoading && (
+          {skeletonVisible && (
             <div className='mt-20 mb-28 px-6 w-full'>
               <Skeleton />
             </div>
@@ -203,15 +229,17 @@ const LayoutArchive = props => {
           </Tag>
         ))}
       </div>
-      {archivePosts && (<div className='w-full'>
-        {Object.keys(archivePosts).map(archiveTitle => (
-          <BlogListArchive
-            key={archiveTitle}
-            archiveTitle={archiveTitle}
-            archivePosts={archivePosts}
-          />
-        ))}
-      </div>)}
+      {archivePosts && (
+        <div className='w-full'>
+          {Object.keys(archivePosts).map(archiveTitle => (
+            <BlogListArchive
+              key={archiveTitle}
+              archiveTitle={archiveTitle}
+              archivePosts={archivePosts}
+            />
+          ))}
+        </div>
+      )}
     </div>
   )
 }

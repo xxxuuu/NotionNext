@@ -68,7 +68,22 @@
 }
 
 * {
-  scrollbar-color: #D3D1CB  rgba(0, 0, 0, 0);
+  scrollbar-width: thin;
+  scrollbar-color: #D3D1CB rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: rgba(0,0,0,0);
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #D3D1CB;
 }
 
 .notion {
@@ -1365,9 +1380,6 @@ code[class*='language-'] {
   border-radius: 3px;
   transition: background 20ms ease-in 0s;
   text-align: center;
-  -ms-overflow-style: none;
-  overflow: -moz-scrollbars-none;
-  scrollbar-width: none; /* firefox */
 }
 
 .notion-equation-inline {

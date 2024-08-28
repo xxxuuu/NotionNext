@@ -18,7 +18,7 @@ const Fireworks = () => {
     // 异步加载
     async function loadFireworks() {
       loadExternalResource(
-        'https://cdn.bootcdn.net/ajax/libs/animejs/3.2.1/anime.min.js',
+        'https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js',
         'js'
       ).then(() => {
         loadExternalResource('/js/fireworks.js', 'js').then(() => {

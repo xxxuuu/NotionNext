@@ -11,7 +11,7 @@ export default function LoadingProgress() {
   // 加载进度条
   useEffect(() => {
     loadExternalResource(
-      'https://cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.js',
+      'https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js',
       'js'
     ).then(() => {
       if (window.NProgress) {
@@ -19,7 +19,7 @@ export default function LoadingProgress() {
         // 调速
         window.NProgress.settings.minimun = 0.1
         loadExternalResource(
-          'https://cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.min.css',
+          'https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css',
           'css'
         )
       }

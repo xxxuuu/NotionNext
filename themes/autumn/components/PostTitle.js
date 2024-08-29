@@ -7,7 +7,7 @@ export const Title = props => {
   return (
     <Link href={post?.href}>
       <h2
-        className='mb-2 sm:mb-4 text-gray-800 text-2xl font-bold
+        className='mb-2 sm:mb-4 text-gray-800 text-2xl font-bold relative
           transition-all duration-300
           before:invisible before:h-5 before:w-0 before:bg-[var(--theme-color)] before:opacity-5
           before:absolute before:top-4 before:-left-2 before:rounded-lg before:transition-all before:duration-500

@@ -14,8 +14,8 @@ import { BlogListPage } from './components/BlogListPage'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { PostLock } from './components/PostLock'
-import { PostMeta } from './components/PostMeta'
-import { NotByAI } from './components/NotByAI'
+import { PostHeader } from './components/PostHeader'
+import { PostFooter } from './components/PostFooter'
 import { Skeleton } from './components/Skeleton'
 import CONFIG from './config'
 import { Style } from './style'
@@ -154,7 +154,7 @@ const LayoutPostList = props => {
  * @returns
  */
 const LayoutSlug = props => {
-  const { post, lock, validPassword } = props
+  const { post, next, lock, validPassword } = props
   const router = useRouter()
   useEffect(() => {
     // 404
@@ -182,14 +182,9 @@ const LayoutSlug = props => {
         <div
           id='article-wrapper'
           className='px-4 sm:px-8 pb-12 sm:pb-20 relative'>
-          <PostMeta post={post} />
+          <PostHeader post={post} />
           <NotionPage post={post} />
-          <div className='mt-16 w-full border-b border-dashed border-gray-200' />
-          {post?.type !== 'Page' && siteConfig('AUTUMN_NOT_BY_AI') && (
-            <div className='h-12 my-16 flex justify-center'>
-              <NotByAI />
-            </div>
-          )}
+          <PostFooter post={post} nextPost={next} />
           <Comment frontMatter={post} />
           <aside className='hidden lg:block absolute h-full w-52 -right-56 top-36'>
             <div className='sticky top-20'>

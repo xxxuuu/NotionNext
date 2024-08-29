@@ -2070,3 +2070,8 @@ figure.notion-asset-wrapper.notion-asset-wrapper-video > div {
   height: 100% !important;
   width: 100% !important;
 }
+
+.notion-external-mention .notion-external-image svg {
+  width: 100%;
+  height: 100%;
+}

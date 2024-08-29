@@ -2,6 +2,7 @@
 
 import Comment from '@/components/Comment'
 import NotionPage from '@/components/NotionPage'
+import LazyImage from '@/components/LazyImage'
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
 import { isBrowser } from '@/lib/utils'
@@ -78,11 +79,11 @@ const LayoutBase = props => {
         className='w-full relative mx-auto max-w-[var(--content-width)]'>
         <div
           id='container-wrapper'
-          className={`relative mx-auto justify-center md:flex`}>
+          className={`relative mx-auto justify-center sm:flex`}>
           {/* 内容 */}
           <Transition
             as={WFullDiv}
-            show={!onLoading}
+            show={!skeletonVisible}
             appear={true}
             enter='w-full transition ease-in-out duration-700 transform order-first'
             enterFrom='w-full opacity-0 translate-y-32'
@@ -207,7 +208,9 @@ const LayoutSlug = props => {
  * @returns
  */
 const Layout404 = props => {
-  return <>404 Not found.</>
+  return <div className='flex justify-center items-center h-96 mt-20 mb-80 sm:mt-32 sm:mb-44'>
+    <LazyImage className='select-none pointer-events-none min-w-[30%]' src='/svg/404.svg' />
+  </div>
 }
 
 /**

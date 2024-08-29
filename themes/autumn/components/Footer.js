@@ -10,8 +10,8 @@ export const Footer = props => {
 
   return (
     <footer className='w-full border-t border-gray-200/[.8] relative mt-72 md:mt-60
-      before:w-full before:h-80 before:z-10 before:block before:absolute before:-top-[16.9rem] before:left-0
-      before:bg-[url(/images/footer-bg.webp)] before:bg-no-repeat before:bg-center
+      before:w-full before:h-[22rem] before:z-10 before:block before:absolute before:-top-[17.6rem] before:left-0
+      before:bg-[url(/images/footer-bg.png)] before:bg-no-repeat before:bg-center before:bg-cover lg:before:bg-contain
     '>
       <div className='max-w-[var(--content-width)] mx-auto my-12'>
         <p className='mx-6 text-left text-xs text-gray-500 font-bold'>

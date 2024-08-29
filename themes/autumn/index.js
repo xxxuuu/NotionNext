@@ -84,12 +84,12 @@ const LayoutBase = props => {
             as={WFullDiv}
             show={!onLoading}
             appear={true}
-            enter='transition ease-in-out duration-700 transform order-first'
-            enterFrom='opacity-0 translate-y-32'
-            enterTo='opacity-100'
-            leave='transition ease-in-out duration-300 transform'
-            leaveFrom='opacity-100 translate-y-0'
-            leaveTo='opacity-0 -translate-y-32'
+            enter='w-full transition ease-in-out duration-700 transform order-first'
+            enterFrom='w-full opacity-0 translate-y-32'
+            enterTo='w-full opacity-100'
+            leave='w-full transition ease-in-out duration-300 transform'
+            leaveFrom='w-full opacity-100 translate-y-0'
+            leaveTo='w-full opacity-0 -translate-y-32'
             unmount={false}>
             {/* 嵌入模块 */}
             {props.slotTop}

@@ -2057,6 +2057,18 @@ code.language-mermaid {
   font-size: 0.8em !important;
 }
 
+.notion-code-wrapper {
+  @apply w-full relative;
+}
+
+.notion-code-wrapper .notion-code-copy {
+  @apply opacity-0;
+}
+
+.notion-code-wrapper:hover .notion-code-copy {
+  @apply opacity-100;
+}
+
 .mermaid > svg {
   margin: auto;
 }

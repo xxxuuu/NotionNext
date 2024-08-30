@@ -53,6 +53,7 @@ const PrismMac = () => {
       renderPrismMac(codeLineNumbers)
       renderMermaid(mermaidCDN)
       renderCollapseCode(codeCollapse, codeCollapseExpandDefault)
+      fixCopyBtn()
     })
   }, [router, isDarkMode])
 
@@ -241,6 +242,23 @@ const fixCodeLineStyle = () => {
       Prism.plugins.lineNumbers.resize(preCode)
     }
   }, 10)
+}
+
+const fixCopyBtn = () => {
+  // then copy btn is moved with scrolling rather than fixed, which isn't expected
+  document.querySelectorAll('.notion-code').forEach(notionCode => {
+    const copyDiv = notionCode.querySelector('.notion-code-copy');
+
+    // Create a new wrapper div
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('notion-code-wrapper');
+    // Insert the wrapper before the current notion-code element
+    notionCode.parentNode.insertBefore(wrapper, notionCode);
+    if (copyDiv) {
+      wrapper.appendChild(copyDiv);
+    }
+    wrapper.appendChild(notionCode);
+  });
 }
 
 export default PrismMac

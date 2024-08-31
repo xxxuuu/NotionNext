@@ -2,7 +2,7 @@ import NotionIcon from '@/components/NotionIcon'
 import { siteConfig } from '@/lib/config'
 import Link from 'next/link'
 
-export const Title = props => {
+export const ItemTitle = props => {
   const { post } = props
   return (
     <Link href={post?.href}>
@@ -16,5 +16,11 @@ export const Title = props => {
         {post?.title}
       </h2>
     </Link>
+  )
+}
+
+export const PostTitle = props => {
+  return (
+    <h1 className='text-4xl font-bold text-gray-800'>{props.children}</h1>
   )
 }

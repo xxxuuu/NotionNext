@@ -16,6 +16,7 @@ import { Header } from './components/Header'
 import { PostLock } from './components/PostLock'
 import { PostHeader } from './components/PostHeader'
 import { PostFooter } from './components/PostFooter'
+import { PostTitle } from './components/Title'
 import { Skeleton } from './components/Skeleton'
 import CONFIG from './config'
 import { Style } from './style'
@@ -217,7 +218,7 @@ const LayoutArchive = props => {
   const { archivePosts, tagOptions } = props
   return (
     <div className='px-6 pb-16'>
-      <div className='pt-14 pb-6 text-4xl font-bold text-gray-800'>归档</div>
+      <div className='pt-14 pb-6'><PostTitle>归档</PostTitle></div>
       <h2 className='font-bold text-gray-500 my-6'>标签</h2>
       <div className='flex flex-wrap gap-y-4'>
         {tagOptions.map(tag => (

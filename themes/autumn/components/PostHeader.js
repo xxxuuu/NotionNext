@@ -1,11 +1,12 @@
 import WordCount from '@/components/WordCount'
+import { PostTitle } from './Title'
 
 export const PostHeader = props => {
   const { post } = props
 
   return (
     <section className='flex flex-col mt-16'>
-      <h1 className='text-3xl sm:text-4xl font-bold text-gray-800'>{post?.title}</h1>
+      <PostTitle>{post?.title}</PostTitle>
       {post?.type !== 'Page' ? (
         <div className='mt-6 mb-8 text-gray-300 flex flex-row'>
           <span className='mr-3 text-gray-300 text-sm sm:text-base font-normal flex justify-center items-center'>
@@ -14,7 +15,7 @@ export const PostHeader = props => {
           <WordCount/>
         </div>
       ) : (
-        <div className='my-6'></div>
+        <div className='my-2'></div>
       )}
     </section>
   )

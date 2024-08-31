@@ -1,6 +1,6 @@
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
-import { Title } from './PostTitle'
+import { ItemTitle } from './Title'
 import { Tag } from './Tag'
 import { NotByAI } from './NotByAI'
 
@@ -28,7 +28,7 @@ export const PostFooter = props => {
           <p className='text-base mb-3 font-normal text-gray-300'>
             {locale.COMMON.NEXT_POST}
           </p>
-          <Title post={nextPost} />
+          <ItemTitle post={nextPost} />
           <div className='mt-6 mb-8 w-full border-b border-dashed border-gray-200' />
         </>
       ) : (

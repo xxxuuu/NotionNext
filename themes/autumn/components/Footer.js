@@ -14,7 +14,7 @@ export const Footer = props => {
       before:bg-[url(/images/footer-bg.png)] before:bg-no-repeat before:bg-center before:bg-cover lg:before:bg-contain
     '>
       <div className='max-w-[var(--content-width)] mx-auto my-12'>
-        <p className='mx-6 text-left text-xs text-gray-500 font-bold'>
+        <p className='mx-6 text-left text-xs text-gray-500 font-bold relative z-20'>
           &copy; {`${copyrightDate}`} {siteConfig('AUTHOR')}
           {' · Powered by '}
           <Link

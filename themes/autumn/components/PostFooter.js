@@ -11,7 +11,7 @@ export const PostFooter = props => {
   return (
     <>
       {post?.type !== 'Page' && siteConfig('AUTUMN_NOT_BY_AI') && (
-        <div className='h-12 my-16 flex justify-center'>
+        <div className='h-12 my-8 sm:my-16 flex justify-center'>
           <NotByAI />
         </div>
       )}

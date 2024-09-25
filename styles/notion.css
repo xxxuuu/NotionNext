@@ -1440,6 +1440,10 @@ code[class*='language-'] {
   margin-right: 6px;
 }
 
+.notion-gallery {
+  padding: 1px;
+}
+
 .notion-collection {
   @apply max-w-0;
 }

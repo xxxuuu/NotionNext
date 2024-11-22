@@ -197,7 +197,7 @@ const Code = dynamic(
     import('react-notion-x/build/third-party/code').then(async m => {
       return m.Code
     }),
-  { ssr: false }
+  { ssr: true }
 )
 
 // 公式
@@ -208,7 +208,7 @@ const Equation = dynamic(
       await import('@/lib/plugins/mhchem')
       return m.Equation
     }),
-  { ssr: false }
+  { ssr: true }
 )
 
 // 原版文档

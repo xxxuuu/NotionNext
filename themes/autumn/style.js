@@ -93,6 +93,7 @@ const Style = () => {
       .notion-list li::marker {
         color: var(--theme-color);
         font-weight: 600;
+        letter-spacing: -1px;
       }
       .notion-table-of-contents-item {
         opacity: 1;
